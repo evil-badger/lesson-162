@@ -1,0 +1,60 @@
+<!DOCTYPE html> <html> <head> <style type="text/css"> </style> </head>
+
+<body>
+        <p>Дана следующая функция:</p>
+        <p>
+        <code>
+                function func() <br> 
+                { this.value = Number(this.value) + 1; } 
+        </code>
+        </p>
+        <p>Даны также инпуты. Сделайте так, чтобы по потери фокуса в любом из наших инпутов выполнялась приведенная выше функция.</p> 
+
+        <input id='elem1', value="10";> <br><br>
+        <input id='elem2', value="20";> <br><br>
+        <input id='elem3', value="30";> <br><br>
+
+        <p>Даны абзацы с числами. Сделайте так, чтобы по клику на любой абзац его число 
+                в нем возводилось в квадрат.</p>
+
+                <p>10</p>
+                <p>20</p>
+                <p>30</p>
+        
+        <p>Сделай функцию анонимной</p>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+</body>
+
+<script>
+                function func() 
+                { this.value = Number(this.value) + 1; }
+                let elems = document.querySelectorAll('input');
+                for (let elem of elems) 
+                { elem.addEventListener('blur', func);}
+
+                function func2() 
+                {this.innerHTML=Math.pow(Number(this.innerHTML),2);}
+                let elems2 = document.querySelectorAll('p');
+                for (let elem of elems2) 
+                { elem.addEventListener('click', func2); }
+
+                let divs = document.querySelectorAll('div');
+                for (let div of divs) 
+                { 
+                        div.addEventListener( 'click', function() { this.innerHTML++; } ); 
+                }
+
+
+
+</script>
+
+</html>
+
+
+
+
+
